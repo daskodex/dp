@@ -6,7 +6,7 @@ def find_string(sub_str, main_string: str) -> bool:
     s = main_string
     for i in range(0, len(sub_str)):
         if sub_str[i] in s:
-            s = s[i+1:]
+            s = s[i + 1:]
             counter += 1
         else:
             return False
@@ -17,14 +17,14 @@ def find_string(sub_str, main_string: str) -> bool:
         return False
 
 
-print(find_string('abe', 'atkbce'))
+if __name__ == '__main__':
 
+# тесты
+    assert find_string('abe', 'atkbce')
+    assert find_string('ab', 'atkbce')
+    assert find_string('abe', 'aabbtkacee')
 
+    assert not find_string('abe', 'aa')
+    assert not find_string('ab', 'atkce')
+    assert not find_string('abe', 'btkace')
 
-#тесты
-assert find_string('abe', 'atkbce') == True
-assert find_string('ab', 'atkbce') == True
-assert find_string('ab', 'atkce') == False
-assert find_string('abe', 'btkace') == False
-assert find_string('abe', 'aabbtkacee') == True
-assert find_string('abe', 'aa') == False
